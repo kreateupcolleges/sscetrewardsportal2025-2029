@@ -42,7 +42,7 @@
           <select id="internalSelect"
             class="w-full border rounded-lg px-3 py-2 h-12 focus:ring-2 focus:ring-indigo-400 focus:outline-none">
             <!-- <option value="IP2">IP2</option> -->
-            <option value="IP1">IP</option>
+            <option value="IP1">S2 IP1</option>
           </select>
         </div>
         <div>
@@ -199,18 +199,18 @@
   /***** CONFIG *****/
   const CONFIG = { defaultInternal: "IP1" };
   const SHEETS = {
-    IP1: { id: "10wJKHlxJcRdu3D6bNl1-CTI1qlLer7neaB9HbU-QXxc", name: "SSCET_2025-2029_S1_IP1&2_RewardsSplit" }
+    IP1: { id: "1Fm2NLsNDdbA9QGwGLNLYLp0XPxnUsu3PwvlrPunF1N0", name: "SSCET_B25-29_S2_IP1_RewardsSplit" }
   };
   CONFIG.INTERNAL_MARKS_SHEETS = {
     IP1: {
-      "Agricultural Engineering": { id: "18c8KgTVJoXZyTAWPHOJjKUfGpSjsT1XxHkNywiUG5hk", name: "Agricultural Engineering" },
-      "Artifical Intelligence and Data Science": { id: "1HayNd3uuN3Vjt2tlKOjr7pgOvuobBPHwHKosOGRbztA", name: "Artifical Intelligence and Data Science" },
-      "Biomedical Engineering": { id: "1OIavTdyg-f-ToWP7rsuSV7YgfKKTHUOHNUCtieVpobE", name: "Biomedical Engineering" },
-      "Computer Science and Engineering": { id: "1yNZLqpPLvbqYUJbyNS2218q_wpKcG4vqeYys0kyoGLY", name: "Computer Science and Engineering" },
-      "Cyber Security": { id: "1_CCzCUXbXx1krq-Ntc6y7g9BLIJy8l1e0KZpRNZHQ00", name: "Cyber Security" },
-      "Electronics and Communication Engineering": { id: "1XbxZCkBJq9AJwxXfG70AvQt1tUdhrFZ17mVXkaPU_Tk", name: "Electronics and Communication Engineering" },
-      "Information Technology": { id: "1jeXvy7Xtq2pF6KARVDl98SZOp8kghfshFuLQ4qqKEBU", name: "Information Technology" },
-      "Mechnical Engineering": { id: "1kCOj_3aszDPKhCE9wd2koUXcKEi2ksP16D_jLfnH2xM", name: "Mechnical Engineering" }
+      "Agricultural Engineering": { id: "1gjSzNSGl4kDB9gKUNXrmDtWNRuLImq9Dm-AebuTTP4g", name: "Agricultural Engineering" },
+      "Artifical Intelligence and Data Science": { id: "1bWwllg7lMfRYOSDLinsNa8NebJ_bMbZ0iDgTPReA56k", name: "Artifical Intelligence and Data Science" },
+      "Biomedical Engineering": { id: "1X_GVzid8oaIwx6Y2EJPF4X7-nUX-JeOtEYPhxUmP8yg", name: "Biomedical Engineering" },
+      "Computer Science and Engineering": { id: "1tCbnDwUEJJXAo2cxLSsC5yFMTSSkpCdw7r4Vjfd5OaU", name: "Computer Science and Engineering" },
+      "Cyber Security": { id: "1whJaxnyQ4BkgloExzEpltmOZ2MnYHz7As9ImyI6AlrU", name: "Cyber Security" },
+      "Electronics and Communication Engineering": { id: "1shxIjBrbpLD2A7mVv52z0WbrDlfhiJhjpNWrFy2cr14", name: "Electronics and Communication Engineering" },
+      "Information Technology": { id: "1Xwt2uB_Q1zD_IMUrTv-YQcX1QnofuX_4vsWQIdWzwC4", name: "Information Technology" },
+      "Mechnical Engineering": { id: "1vW68hepzNqEqjSdAOIJCYgdq47umlrmruKMBISDlZaw", name: "Mechnical Engineering" }
     }
   };
 
@@ -233,102 +233,95 @@
   /* All departments mapping (full) */
 const deptSubjects = {
   "Agricultural Engineering": [
-    { code: "25EN101", type: "Theory" },
-    { code: "25MA201", type: "Theory" },
-    { code: "25ME301", type: "Theory" },
-    { code: "25TA101", type: "Theory" },
-    { code: "25HS701", type: "Theory" },
-    { code: "25AG401", type: "Theory" },
-    { code: "25CS301", type: "Theory + Lab" },
-    { code: "25AS201", type: "Theory + Lab" },
-    { code: "25AD301", type: "Lab" }
+    { code: "25EN102", type: "Theory" },
+    { code: "25MA203", type: "Theory" },
+    { code: "25EC301", type: "Theory" },
+    { code: "25ME302", type: "Theory" },
+    { code: "25AD302", type: "Theory + Lab" },
+    { code: "25ME701", type: "Theory" },
+    { code: "25TA102", type: "Theory" },
+    { code: "25ME303", type: "Lab" }
   ],
 
   "Artifical Intelligence and Data Science": [
-    { code: "25EN101", type: "Theory" },
-    { code: "25MA201", type: "Theory" },
-    { code: "25ME301", type: "Theory" },
-    { code: "25TA101", type: "Theory" },
-    { code: "25HS701", type: "Theory" },
-    { code: "25AD401", type: "Theory" },
-    { code: "25CS301", type: "Theory + Lab" },
-    { code: "25AS201", type: "Theory + Lab" },
-    { code: "25AD301", type: "Lab" }
+    { code: "25EN102", type: "Theory" },
+    { code: "25MA202", type: "Theory" },
+    { code: "25AD302", type: "Theory + Lab" },
+    { code: "25CS402", type: "Theory + Lab" },
+    { code: "25AD402", type: "Theory + Lab" },
+    { code: "25IT301", type: "Lab" },
+    { code: "25TA102", type: "Theory" },
+    { code: "25ME701", type: "Theory" }
   ],
 
   "Biomedical Engineering": [
-    { code: "25EN101", type: "Theory" },
-    { code: "25MA201", type: "Theory" },
-    { code: "25ME301", type: "Theory" },
-    { code: "25TA101", type: "Theory" },
-    { code: "25HS701", type: "Theory" },
-    { code: "25BM419", type: "Theory" },
-    { code: "25CS301", type: "Theory + Lab" },
-    { code: "25AS201", type: "Theory + Lab" },
-    { code: "25AD301", type: "Lab" }
+    { code: "25EN102", type: "Theory" },
+    { code: "25MA203", type: "Theory" },
+    { code: "25EC424", type: "Theory" },
+    { code: "25EC426", type: "Theory + Lab" },
+    { code: "25CY202", type: "Theory + Lab" },
+    { code: "25AD302", type: "Theory + Lab" },
+    { code: "25EC425", type: "Lab" },
+    { code: "225ME701", type: "Theory" },
+    { code: "25TA102", type: "Theory" }
   ],
 
   "Computer Science and Engineering": [
-    { code: "25EN101", type: "Theory" },
+    { code: "25EN102", type: "Theory" },
     { code: "25MA201", type: "Theory" },
-    { code: "25ME301", type: "Theory" },
-    { code: "25TA101", type: "Theory" },
-    { code: "25HS701", type: "Theory" },
-    { code: "25CS401", type: "Theory" },
-    { code: "25CS301", type: "Theory + Lab" },
-    { code: "25AS201", type: "Theory + Lab" },
-    { code: "25AD301", type: "Lab" }
+    { code: "25CB402", type: "Theory" },
+    { code: "25AD302", type: "Theory + Lab" },
+    { code: "25CS402", type: "Theory + Lab" },
+    { code: "25IT301", type: "Lab" },
+    { code: "25ME701", type: "Theory" },
+    { code: "25TA102", type: "Theory" }
   ],
 
   "Cyber Security": [
-    { code: "25EN101", type: "Theory" },
-    { code: "25MA201", type: "Theory" },
-    { code: "25ME301", type: "Theory" },
-    { code: "25TA101", type: "Theory" },
-    { code: "25HS701", type: "Theory" },
-    { code: "25CB401", type: "Theory" },
-    { code: "25CS301", type: "Theory + Lab" },
-    { code: "25AS201", type: "Theory + Lab" },
-    { code: "25AD301", type: "Lab" }
+    { code: "25EN102", type: "Theory" },
+    { code: "25MA202", type: "Theory" },
+    { code: "25CB402", type: "Theory" },
+    { code: "25AD302", type: "Theory + Lab" },
+    { code: "25CS402", type: "Theory + Lab" },
+    { code: "25IT301", type: "Lab" },
+    { code: "25ME701", type: "Theory" },
+    { code: "25TA102", type: "Theory" }
   ],
 
   "Electronics and Communication Engineering": [
-    { code: "25EN101", type: "Theory" },
-    { code: "25MA201", type: "Theory" },
-    { code: "25ME301", type: "Theory" },
-    { code: "25TA101", type: "Theory" },
-    { code: "25HS701", type: "Theory" },
-    { code: "25EC421", type: "Theory" },
-    { code: "25CS301", type: "Theory + Lab" },
-    { code: "25AS201", type: "Theory + Lab" },
-    { code: "25AD301", type: "Lab" }
+    { code: "25EN102", type: "Theory" },
+    { code: "25MA203", type: "Theory" },
+    { code: "25EC424", type: "Theory" },
+    { code: "25EC426", type: "Theory + Lab" },
+    { code: "25AD302", type: "Theory + Lab" },
+    { code: "25EC425", type: "Lab" },
+    { code: "25ME701", type: "Theory" },
+    { code: "25TA102", type: "Theory" }
   ],
 
   "Information Technology": [
-    { code: "25EN101", type: "Theory" },
-    { code: "25MA201", type: "Theory" },
-    { code: "25ME301", type: "Theory" },
-    { code: "25TA101", type: "Theory" },
-    { code: "25HS701", type: "Theory" },
-    { code: "25IT401", type: "Theory" },
-    { code: "25CS301", type: "Theory + Lab" },
-    { code: "25AS201", type: "Theory + Lab" },
-    { code: "25AD301", type: "Lab" }
+    { code: "25EN102", type: "Theory" },
+    { code: "25MA202", type: "Theory" },
+    { code: "25CB402", type: "Theory" },
+    { code: "25AD302", type: "Theory + Lab" },
+    { code: "25CS402", type: "Theory + Lab" },
+    { code: "25IT301", type: "Lab" },
+    { code: "25ME701", type: "Theory" },
+    { code: "25TA102", type: "Theory" }
   ],
 
   "Mechnical Engineering": [
-    { code: "25EN101", type: "Theory" },
-    { code: "25MA201", type: "Theory" },
-    { code: "25ME301", type: "Theory" },
-    { code: "25TA101", type: "Theory" },
-    { code: "25HS701", type: "Theory" },
-    { code: "25ME401", type: "Theory" },
-    { code: "25CS301", type: "Theory + Lab" },
-    { code: "25AS201", type: "Theory + Lab" },
-    { code: "25AD301", type: "Lab" }
+    { code: "25EN102", type: "Theory" },
+    { code: "25MA203", type: "Theory" },
+    { code: "25EC301", type: "Theory" },
+    { code: "25ME302", type: "Theory" },
+    { code: "25AD302", type: "Theory + Lab" },
+    { code: "25ME303", type: "Lab" },
+    { code: "25ME701", type: "Theory" },
+    { code: "25TA102", type: "Theory" }
   ]
 };
-  const maxMap = { Theory: 16, "Theory + Lab" :20, Lab: 20 };
+  const maxMap = { Theory: 8, "Theory + Lab" :10, Lab: 10 };
 
   let activeInternal = CONFIG.defaultInternal || "IP1";
   let students = [], headers = [], headerMap = {};
