@@ -380,20 +380,22 @@ const deptSubjects = {
     try{
       const sheet = SHEETS[internalKey];
       if (!sheet) throw new Error("Sheet config missing for " + internalKey);
-      const url = `https://docs.google.com/spreadsheets/d/${sheet.id}/gviz/tq?sheet=${encodeURIComponent(sheet.name)}`;
-      const res = await fetch(url, { cache: "no-store" });
-      if(!res.ok){
-        const preview = await res.text().then(t => t.slice(0,1000));
-        console.error("Non-OK response fetching sheet:", res.status, preview);
-        showStatus(`Error loading sheet (HTTP ${res.status}). Check sheet sharing & sheet name.`, "error");
-        return false;
-      }
-      const text = await res.text();
-      if (text.trim().startsWith("<!DOCTYPE html") || text.toLowerCase().includes("signin") || text.toLowerCase().includes("google accounts")){
-        console.error("Response looks like HTML (possible permission/sign-in page). Preview:", text.slice(0,1200));
-        showStatus("Sheet fetch returned HTML (likely the sheet is not public). Make the sheet 'Anyone with link - Viewer' or Publish to web.", "error");
-        return false;
-      }
+      const url = `https://docs.google.com/spreadsheets/d/${sheet.id}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheet.name)}`;
+
+const res = await fetch(url, { cache: "no-store" });
+const text = await res.text();   // important
+
+if(!res.ok){
+  console.error("Non-OK response fetching sheet:", res.status);
+  showStatus(`Error loading sheet (HTTP ${res.status}).`, "error");
+  return false;
+}
+
+if (!text.includes("google.visualization.Query.setResponse")) {
+  console.error("Unexpected sheet response:", text.slice(0,500));
+  showStatus("Unexpected response from Google Sheets.", "error");
+  return false;
+}
       let json;
       try { json = JSON.parse(text.substr(47).slice(0, -2)); } catch(e){
         console.error("Failed to parse gviz JSON:", e, "Preview:", text.slice(0,500));
